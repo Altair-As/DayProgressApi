@@ -1,3 +1,5 @@
+using DayProgressApi.Services;
+using DayProgressApi.Services.Interfaces;
 
 namespace DayProgressApi
 {
@@ -8,6 +10,8 @@ namespace DayProgressApi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            var services = builder.Services;
+            services.AddScoped<IProgressService, ProgressService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +30,6 @@ namespace DayProgressApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
