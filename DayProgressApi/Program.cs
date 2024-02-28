@@ -11,10 +11,10 @@ namespace DayProgressApi
 
             // Add services to the container.
             var services = builder.Services;
+
             services.AddScoped<IProgressService, ProgressService>();
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
